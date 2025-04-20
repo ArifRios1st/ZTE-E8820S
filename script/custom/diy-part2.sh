@@ -24,3 +24,6 @@ sed -i "s/'UTC'/'WIT-7'\n set system.@system[-1].zonename='Asia\/Jakarta'/g" pac
 
 # Fixing numbers of connection
 sed -i '/customized in this file/a net.netfilter.nf_conntrack_max=165535' package/base-files/files/etc/sysctl.conf
+
+# Change default theme from bootstrap to argon
+sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
