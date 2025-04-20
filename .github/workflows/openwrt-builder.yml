@@ -19,9 +19,9 @@ on:
 env:
   REPO_URL: https://github.com/openwrt/openwrt
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: config/official.config
-  DIY_P1_SH: script/official/diy-part1.sh
-  DIY_P2_SH: script/official/diy-part2.sh
+  CONFIG_FILE: config/custom.config
+  DIY_P1_SH: script/custom/diy-part1.sh
+  DIY_P2_SH: script/custom/diy-part2.sh
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
@@ -54,7 +54,7 @@ jobs:
       working-directory: /workdir
       run: |
         df -hT $PWD
-        git clone $REPO_URL
+        git clone $REPO_URL openwrt
         cd openwrt
         git pull
         
@@ -144,7 +144,7 @@ jobs:
       uses: svenstaro/upload-release-action@v2
       if: steps.organize.outputs.status == 'success' && !cancelled()
       with:
-        repo_token: ${{ secrets.GITHUB_TOKEN }}
+        repo_token: ${{ secrets.GIT_TOKEN }}
         file: ${{ env.FIRMWARE }}/*
         tag: ${{ github.ref }}
         file_glob: true
