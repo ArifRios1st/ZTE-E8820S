@@ -17,5 +17,5 @@
 #echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
 #echo 'src-git kenzok8 https://github.com/kenzok8/small-package' >>feeds.conf.default
-#echo 'src-git luci-theme-argon https://github.com/jerrykuku/luci-theme-argon.git' >> feeds.conf.default
+#echo 'src-git luci-theme-argon https://github.com/jerrykuku/luci-theme-argon' >> feeds.conf.default
 #echo 'src-git luci-app-argon-config https://github.com/jerrykuku/luci-app-argon-config' >> feeds.conf.default
