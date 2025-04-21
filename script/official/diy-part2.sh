@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # https://github.com/P3TERX/Actions-OpenWrt
-# File name: diy-part2.sh
+# File name: script/official/diy-part2.sh
 # Description: OpenWrt DIY script part 2 (After Update feeds)
 #
 # Copyright (c) 2019-2024 P3TERX <https://p3terx.com>
@@ -14,7 +14,7 @@
 sed -i 's/192.168.1.1/192.168.11.1/g' package/base-files/files/bin/config_generate
 
 # Modify hostname
-sed -i 's/OpenWrt/ZTE-E880S/g' package/base-files/files/bin/config_generate
+sed -i 's/OpenWrt/Mococo/g' package/base-files/files/bin/config_generate
 
 # Change timezone
 sed -i "s/'UTC'/'WIT-7'\n set system.@system[-1].zonename='Asia\/Jakarta'/g" package/base-files/files/bin/config_generate

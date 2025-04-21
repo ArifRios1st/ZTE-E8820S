@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # https://github.com/P3TERX/Actions-OpenWrt
-# File name: diy-part2.sh
+# File name: script/custom/diy-part2.sh
 # Description: OpenWrt DIY script part 2 (After Update feeds)
 #
 # Copyright (c) 2019-2024 P3TERX <https://p3terx.com>
@@ -11,7 +11,7 @@
 #
 
 # Modify default theme（FROM luci-theme-bootstrap CHANGE TO luci-theme-argon）
-sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' ./feeds/luci/collections/luci/Makefile
+# sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' ./feeds/luci/collections/luci/Makefile
 
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.11.1/g' package/base-files/files/bin/config_generate
@@ -24,6 +24,3 @@ sed -i "s/'UTC'/'WIT-7'\n set system.@system[-1].zonename='Asia\/Jakarta'/g" pac
 
 # Fixing numbers of connection
 sed -i '/customized in this file/a net.netfilter.nf_conntrack_max=165535' package/base-files/files/etc/sysctl.conf
-
-# Change default theme from bootstrap to argon
-sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
