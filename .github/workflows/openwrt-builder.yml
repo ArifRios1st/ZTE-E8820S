@@ -66,6 +66,12 @@ jobs:
     - name: Applying patch
       run: cd /workdir/openwrt && patch -p0001 < $GITHUB_WORKSPACE/$PATCH1
 
+    - name: Cache
+      uses: klever1988/cachewrtbuild@main
+      with:
+        ccache: 'true'
+        prefix: ${{ github.workspace }}/openwrt
+
     - name: Load custom feeds
       run: |
         [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
